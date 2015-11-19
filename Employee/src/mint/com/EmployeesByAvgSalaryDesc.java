@@ -16,15 +16,6 @@ public class EmployeesByAvgSalaryDesc implements Comparator<Worker> {
 		String name1 = w1.getName();
 		String name2 = w2.getName();
 		
-		return salary1.compareTo(salary2);
-		
-//		return((salary1 < salary2) ? 1 : (salary1 > salary2) ? -1 : 0);
-		
-//		if(salary1 != salary2){
-//			return salary1.compareTo(salary2);
-//		}
-//		else{
-//			return name1.compareTo(name2);
-//		}
+		return((salary1 < salary2) ? 1 : (salary1 > salary2) ? -1 : (name1.compareTo(name2)));
 	}
 }

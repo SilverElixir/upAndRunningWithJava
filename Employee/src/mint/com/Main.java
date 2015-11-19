@@ -24,25 +24,14 @@ public static void main(String[] args) {
                 add(new Employee(4, "Cliwe Owen", 3100.9));
                 add(new Employee(5, "Jessica Biel", 3078.4));
                 add(new Employee(6, "Robert De Niro", 3307.89));
+                add(new Employee(7, "Jeniffer Aniston", 3078.4));
+                add(new Employee(8, "Penelopa Cruz", 3078.4));
             }};
           
         // a) Sort the collection of employees in descending order by the average monthly salary. In the case of
         //equal salary – by the name. Write ID, name and monthly salary for all employees from collection
 
-        //Collections.sort(workers, new EmployeesByAvgSalaryDesc());
-
-            Collections.sort(workers, new Comparator<Worker>() {
-
-				@Override
-				public int compare(Worker w1, Worker w2) {
-					if(w1.getSalary() > w2.getSalary()){
-						return 1;
-					}
-					else if(w1.getSalary() < w2.getSalary()){
-						return -1;
-					}
-						return 0;
-				}});
+        Collections.sort(workers, new EmployeesByAvgSalaryDesc());
 
         for (Worker w : workers) {
             System.out.println(w);
@@ -57,17 +46,19 @@ public static void main(String[] args) {
         
         System.out.println("- - - - - - - -");
         
-        // c) Write ID of three last employees from collection 
+        // c) Write ID of three last employees from collection
         int j = workers.size()-1;
-        while(j>2){
+        int count = 3;
+        while(count > 0){
         	System.out.println(workers.get(j));
         	j--;
+            count--;
         }
         
         System.out.println("- - - - - - - -");
         
         // d) Write code for reading and writing collection of these objects from (into) file.
-        File f = new File("/Users/capitol/Downloads/collection.txt");
+        File f = new File("/Users/laracroft/Downloads/collection.txt");
         
         try(BufferedWriter br = new BufferedWriter(new FileWriter(f))){
             for (Worker w : workers) {

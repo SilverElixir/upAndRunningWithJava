@@ -6,8 +6,7 @@ package mint.com;
 public class Contractor extends Worker {
 	
     public Contractor(int id, String name, double hourlyRate) {
-        super(id, name);
-        salary = 20.8 * 8 * hourlyRate;
+        super(id, name, 20.8 * 8 * hourlyRate);
     }
 
     @Override
@@ -15,8 +14,5 @@ public class Contractor extends Worker {
         return id + ") " + name + " has average monthly salary equal to " + salary;
     }
 
-//    @Override
-//    public int compareTo(Worker other) {
-//        return Double.compare(this.getSalary(), other.getSalary());
-//    }
 }
+
